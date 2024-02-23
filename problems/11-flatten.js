@@ -13,21 +13,19 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
 function flatten(arr) {
-  if (!arr.length) {
-    return [];
+  let result = [];
+
+  for ( let i = 0; i < arr.length; i++ ) {
+    if (Array.isArray(arr[i])) {
+      result.push(...flatten(arr[i]));
+    } else {
+      result.push(arr[i]);
+    }
   }
 
-  let newArr = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    let el1 = arr[i];
-    newArr.push(el1);
-
-
-  }
-
-  console.log(newArr);
+  return result;
 }
+
 
 console.log(flatten([1, [2, [3]]])); // [1, 2, 3]
 
