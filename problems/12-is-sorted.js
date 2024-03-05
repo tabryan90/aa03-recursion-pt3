@@ -12,7 +12,7 @@ isSorted([5, 4, 3, 2, 1]); // false
 
 debugger
 function isSorted(arr) {
-  if (arr.length === 1) {
+  if (arr.length < 2) {
     return true;
   }
 
